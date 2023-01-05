@@ -1,9 +1,8 @@
 ﻿namespace ArkLens.Core;
 
 /// <summary>
-/// A wrapper for enumeration classes with only pre-defined values.
-/// Classes that implement <see cref="IEnumeration{TSelf}"/>
-/// are expected to not have public constructors.
+/// Exposes a static collection of pre-defined allowed values.
+/// <typeparamref name="TSelf"/> should not expose any public constructors.
 /// </summary>
 /// <typeparam name="TSelf"></typeparam>
 public interface IEnumeration<TSelf>
@@ -12,5 +11,5 @@ public interface IEnumeration<TSelf>
 	/// <summary>
 	/// Represets all possible values of this <see cref="IEnumeration{TSelf}"/>.
 	/// </summary>
-	static abstract IReadOnlyList<TSelf> All { get; }
+	static abstract IReadOnlyList<TSelf> PossibleValues { get; }
 }
