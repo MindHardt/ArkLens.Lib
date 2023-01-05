@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkLens", "ArkLens\ArkLens.csproj", "{B1B7D5D2-B127-403B-A334-112EC5FCC2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkLens.Tests", "ArkLens.Tests\ArkLens.Tests.csproj", "{02592C10-8FE8-4307-97ED-0AD8F3B96856}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1B7D5D2-B127-403B-A334-112EC5FCC2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B7D5D2-B127-403B-A334-112EC5FCC2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B7D5D2-B127-403B-A334-112EC5FCC2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B7D5D2-B127-403B-A334-112EC5FCC2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02592C10-8FE8-4307-97ED-0AD8F3B96856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02592C10-8FE8-4307-97ED-0AD8F3B96856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02592C10-8FE8-4307-97ED-0AD8F3B96856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02592C10-8FE8-4307-97ED-0AD8F3B96856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B6CCD70-0F1B-4725-BCED-EDA78B3CE219}
+	EndGlobalSection
+EndGlobal
