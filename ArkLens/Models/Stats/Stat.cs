@@ -1,4 +1,5 @@
 ﻿using ArkLens.Core;
+using System.Text.Json.Serialization;
 
 namespace ArkLens.Models.Stats;
 
@@ -36,11 +37,12 @@ public abstract class Stat : CharacterElement
 	/// </summary>
 	public int Modifyer => DisplayModifyer;
 
-
 	/// <summary>
 	/// Current <see cref="Stats.RaceImpact"/> of this <see cref="Stat"/>.
+	/// This property is ignored in json because it is duplicated in several places.
 	/// </summary>
-	public RaceImpact RaceImpact { get; set; }
+	[JsonIgnore]
+	public RaceImpact RaceImpact { get; set; } = RaceImpact.Unaffected;
 
 
 	/// <summary>
@@ -51,5 +53,6 @@ public abstract class Stat : CharacterElement
 	protected static int ModOf(int value) => value / 2 - 5;
 	protected Stat(string emoji, string name) : base(emoji, name)
 	{
+		RawValue = 10;
 	}
 }
