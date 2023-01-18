@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace ArkLens.Core;
 
@@ -7,7 +9,7 @@ namespace ArkLens.Core;
 /// serialization of <see cref="ICharacterElementEnumeration{TSelf}"/> values.
 /// </summary>
 /// <typeparam name="TElement"></typeparam>
-public class CharacterDraftElement<TElement>
+public class CharacterDraftElement<TElement> : INotifyPropertyChanged
 	where TElement : CharacterElement, ICharacterElementEnumeration<TElement>
 {
 	private string? _name;
@@ -23,6 +25,7 @@ public class CharacterDraftElement<TElement>
 		{
 			_name = value;
 			AdjustValue();
+			OnPropertyChanged();
 		}
 	}
 	/// <summary>
@@ -36,6 +39,7 @@ public class CharacterDraftElement<TElement>
 		{
 			 _value = value;
 			AdjustName();
+			OnPropertyChanged();
 		}
 	}
 
@@ -55,5 +59,7 @@ public class CharacterDraftElement<TElement>
 	private void AdjustValue() => _value = ICharacterElementEnumeration<TElement>.GetByName(Name);
 
 
-
+	public event PropertyChangedEventHandler? PropertyChanged;
+	protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+		=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
