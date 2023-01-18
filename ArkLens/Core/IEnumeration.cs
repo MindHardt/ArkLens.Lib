@@ -9,7 +9,7 @@ public interface IEnumeration<TSelf>
 	where TSelf : IEnumeration<TSelf>
 {
 	/// <summary>
-	/// Represets all possible values of <typeparamref name="TSelf"/>.
+	/// Represents all possible values of <typeparamref name="TSelf"/>.
 	/// </summary>
 	static abstract IReadOnlyList<TSelf> PossibleValues { get; }
 }
