@@ -14,7 +14,7 @@ public abstract class Stat : CharacterElement
 	/// </summary>
 	public int RawValue { get; set; }
 	/// <summary>
-	/// The modifyer of <see cref="RawValue"/>.
+	/// The modifier of <see cref="RawValue"/>.
 	/// </summary>
 	public int RawModifyer => ModOf(RawValue);
 	#endregion
@@ -26,14 +26,14 @@ public abstract class Stat : CharacterElement
 	/// </summary>
 	public int DisplayValue => RawValue + (sbyte)RaceImpact;
 	/// <summary>
-	/// The modifyer of <see cref="DisplayValue"/>.
+	/// The modifier of <see cref="DisplayValue"/>.
 	/// </summary>
 	public int DisplayModifyer => ModOf(DisplayValue);
 	#endregion
 
 
 	/// <summary>
-	/// The modifyer of <see cref="Value"/>. This is used for most all calculations.
+	/// The modifier of <see cref="Value"/>. This is used for most all calculations.
 	/// </summary>
 	public int Modifyer => DisplayModifyer;
 
@@ -46,7 +46,7 @@ public abstract class Stat : CharacterElement
 
 
 	/// <summary>
-	/// Gets modifyer of <see cref="Stat"/>s value.
+	/// Gets modifier of <see cref="Stat"/>s value.
 	/// </summary>
 	/// <param name="value"></param>
 	/// <returns></returns>

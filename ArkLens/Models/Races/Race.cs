@@ -18,7 +18,7 @@ public abstract class Race : CharacterElement, ICharacterElementEnumeration<Race
 
 	/// <summary>
 	/// Gets <see cref="RaceStatInfluence"/> of this <see cref="Race"/> or 
-	/// <see langword="null"/> if other behaviour is expected.
+	/// <see langword="null"/> if other behavior is expected.
 	/// </summary>
 	public abstract RaceStatInfluence? StatInfluence { get; }
 
