@@ -18,6 +18,4 @@ public abstract class Class : CharacterElement, ICharacterElementEnumeration<Cla
 	/// The amount of skill points gained per-level for this <see cref="Class"/>.
 	/// </summary>
 	public abstract int SkillPoints { get; }
-
-
 }

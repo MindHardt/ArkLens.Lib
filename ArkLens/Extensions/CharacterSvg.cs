@@ -1,4 +1,4 @@
-﻿using ArkLens.Models;
+﻿using ArkLens.Models.Drafts;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Xml;
@@ -7,7 +7,7 @@ namespace ArkLens.Extensions;
 
 /// <summary>
 /// Represents an SVG file with character sheet. It is expected to catch all changes
-/// of inner <see cref="Models.CharacterDraft"/> object and update its data.
+/// of inner <see cref="Models.Drafts.CharacterDraft"/> object and update its data.
 /// </summary>
 public class CharacterSheetSvg
 {

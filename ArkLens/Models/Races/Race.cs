@@ -23,7 +23,7 @@ public abstract class Race : CharacterElement, ICharacterElementEnumeration<Race
 	public abstract RaceStatInfluence? StatInfluence { get; }
 
 	private static Race[] GetAllRaces()
-		=> Assembly.GetAssembly(typeof(Race))!
+		=> Assembly.GetExecutingAssembly()
 			.GetTypes()
 			.Where(t => t.IsAssignableTo(typeof(Race)) && !t.IsAbstract)
 			.Select(t => t.GetProperty(nameof(ISingleton<Human>.Value))!)

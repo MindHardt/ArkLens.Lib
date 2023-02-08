@@ -52,7 +52,7 @@ public class CharacterDraftElement<TElement> : INotifyPropertyChanged
 	public override int GetHashCode()
 		=> HashCode.Combine(Name, Value);
 
-	public override string? ToString()
+	public override string ToString()
 		=> $"{Name};{Value}";
 
 	private void AdjustName() => _name = Value?.Name;
@@ -62,4 +62,22 @@ public class CharacterDraftElement<TElement> : INotifyPropertyChanged
 	public event PropertyChangedEventHandler? PropertyChanged;
 	protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
 		=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+
+	public static implicit operator CharacterDraftElement<TElement>(string? value)
+		=> FromName(value);
+	
+	/// <summary>
+	/// Creates a new <see cref="CharacterDraftElement{TElement}"/> with 
+	/// <see cref="Name"/> set to <paramref name="name"/>.
+	/// This can be replaced with an implicit cast from <see cref="string"/>.
+	/// </summary>
+	/// <param name="name"></param>
+	/// <returns></returns>
+	public static CharacterDraftElement<TElement> FromName(string? name)
+		=> new()
+		{
+			Name = name,
+		};
+
 }

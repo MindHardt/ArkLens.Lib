@@ -20,8 +20,10 @@ public class CharacterDraftElementTests
 
 		Assert.Equal(draft.Value, race);
 
-		CharacterDraftElement<Race> other = new();
-		other.Value = race;
+		CharacterDraftElement<Race> other = new()
+		{
+			Value = race
+		};
 
 		Assert.Equal(other.Name, race.Name);
 		Assert.Equal(draft, other);
@@ -41,5 +43,17 @@ public class CharacterDraftElementTests
 		Assert.Equal(draft, deserialized);
 		// CharacterDraftElements are serialized by names so they must not contain emoji
 		Assert.DoesNotContain(draft.Value.Emoji, json);
+	}
+
+	[Fact]
+	public void StringCastTests()
+	{
+		Race race = Dwarf.Value;
+
+		CharacterDraftElement<Race> draft = race.Name;
+
+		Assert.NotNull(draft);
+		Assert.Equal(race.Name, draft.Name);
+		Assert.Equal(race, draft.Value);
 	}
 }

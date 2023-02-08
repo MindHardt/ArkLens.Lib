@@ -21,4 +21,6 @@ public interface ICharacterElementEnumeration<TSelf> : IEnumeration<TSelf>
 	static TSelf? GetByName(string? name, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
 		=> TSelf.PossibleValues
 		.FirstOrDefault(e => e.Name.Equals(name, comparison));
+
+
 }
