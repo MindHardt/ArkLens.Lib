@@ -25,6 +25,8 @@ public class CharacterDraft : INotifyPropertyChanged
 
     public CharacterDraftElement<Race> Race { get; } = new();
 
+    public CharacterDraftElement<Sex> Sex { get; } = new();
+
     public StatSet Stats { get; init; } = new();
 
 
@@ -37,5 +39,6 @@ public class CharacterDraft : INotifyPropertyChanged
     {
         Alignment.PropertyChanged += (_, _) => OnPropertyChanged(nameof(Alignment));
         Race.PropertyChanged += (_, _) => OnPropertyChanged(nameof(Race));
+        Sex.PropertyChanged += (_, _) => OnPropertyChanged(nameof(Sex));
     }
 }
