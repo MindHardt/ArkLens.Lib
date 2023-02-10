@@ -1,5 +1,4 @@
 ﻿using ArkLens.Core;
-using ArkLens.Models.Alignments;
 using ArkLens.Properties;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -39,7 +38,7 @@ public partial class CharacterDraftSvg : IDynamicSvg<CharacterDraft>
 
         ArgumentNullException.ThrowIfNull(nodes);
 
-        for(int i = 0; i < nodes.Count; i++)
+        for (int i = 0; i < nodes.Count; i++)
         {
             XmlNode node = nodes[i]!;
 
