@@ -1,4 +1,4 @@
-﻿using ArkLens.Core.CharacterDraftElement;
+﻿using ArkLens.Core;
 using ArkLens.Models.Alignments;
 using ArkLens.Models.Races;
 using System.ComponentModel;
@@ -8,11 +8,6 @@ namespace ArkLens.Models.Drafts;
 
 public class CharacterDraft : INotifyPropertyChanged
 {
-    /// <summary>
-    /// The database Id, it is not meant to be changed in code.
-    /// </summary>
-    public int? Id { get; set; }
-
     private string? name;
 
     public string? Name
@@ -25,11 +20,11 @@ public class CharacterDraft : INotifyPropertyChanged
         }
     }
 
-    public CharacterDraftElement<Alignment> Alignment { get; } = new();
+    public CharacterDraftElement<Alignment> Alignment { get; init; } = new();
 
-    public CharacterDraftElement<Race> Race { get; } = new();
+    public CharacterDraftElement<Race> Race { get; init; } = new();
 
-    public CharacterDraftElement<Sex> Sex { get; } = new();
+    public CharacterDraftElement<Sex> Sex { get; init; } = new();
 
     //public StatSet Stats { get; init; } = new();
 
