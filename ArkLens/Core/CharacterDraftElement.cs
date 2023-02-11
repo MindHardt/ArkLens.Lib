@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
-namespace ArkLens.Core.CharacterDraftElement;
+namespace ArkLens.Core;
 
 /// <summary>
 /// A helper class for character building and 

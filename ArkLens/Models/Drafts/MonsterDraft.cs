@@ -1,4 +1,4 @@
-﻿using ArkLens.Core.CharacterDraftElement;
+﻿using ArkLens.Core;
 using ArkLens.Models.Alignments;
 
 namespace ArkLens.Models.Drafts;
