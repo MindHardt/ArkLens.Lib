@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Xml;
 
-namespace ArkLens.Core;
+namespace ArkLens.Models.SvgFiles;
 
 /// <summary>
 /// Allows to create a dynamic svg file for <typeparamref name="T"/> type,
@@ -107,7 +107,7 @@ public abstract partial class DynamicSvg<T>
 	{
 		if (node.HasChildNodes)
 		{
-			foreach (var child in node.ChildNodes.OfType<XmlNode>()) 
+			foreach (var child in node.ChildNodes.OfType<XmlNode>())
 			{
 				AddNodes(child, list);
 			}

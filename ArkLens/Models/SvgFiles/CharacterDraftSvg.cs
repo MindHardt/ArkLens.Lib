@@ -1,8 +1,8 @@
-﻿using ArkLens.Core;
+﻿using ArkLens.Models.Drafts;
 using ArkLens.Properties;
 using System.Text;
 
-namespace ArkLens.Models.Drafts.SvgFiles;
+namespace ArkLens.Models.SvgFiles;
 
 public partial class CharacterDraftSvg : DynamicSvg<CharacterDraft>
 {
@@ -34,5 +34,5 @@ public partial class CharacterDraftSvg : DynamicSvg<CharacterDraft>
 		AddFillAction(sex, d => d.Sex.Value?.ToString());
 	}
 
-	
+
 }
