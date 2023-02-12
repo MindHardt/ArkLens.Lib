@@ -8,11 +8,11 @@
 public interface ISnapshot<TSelf, TObject>
 {
 	/// <summary>
-	/// Creates <typeparamref name="TSelf"/> object that represents <paramref name="value"/>.
+	/// Fills this <typeparamref name="TSelf"/> with data of <paramref name="value"/>.
 	/// </summary>
 	/// <param name="value"></param>
-	/// <returns></returns>
-	public abstract static TSelf CreateFrom(TObject value);
+	/// <returns>Reference to the same object.</returns>
+	public TSelf FillFrom(TObject value);
 	/// <summary>
 	/// Uses this <typeparamref name="TSelf"/> to build new <typeparamref name="TObject"/>.
 	/// </summary>
