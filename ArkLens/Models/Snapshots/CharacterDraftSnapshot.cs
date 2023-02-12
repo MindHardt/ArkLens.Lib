@@ -4,10 +4,10 @@ namespace ArkLens.Models.Snapshots;
 
 public record CharacterDraftSnapshot : ISnapshot<CharacterDraftSnapshot, CharacterDraft>
 {
-	public required string? Name { get; set; }
+	public string? Name { get; set; }
 	//public required string? Class { get; init; }
-	public required string? Race { get; set; }
-	public required string? Alignment { get; set; }
+	public string? Race { get; set; }
+	public string? Alignment { get; set; }
 
 	public CharacterDraftSnapshot FillFrom(CharacterDraft value)
 	{
