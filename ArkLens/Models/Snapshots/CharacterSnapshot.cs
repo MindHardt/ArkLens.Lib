@@ -1,27 +1,22 @@
-﻿using ArkLens.Models.Drafts;
+﻿using ArkLens.Abstractions;
+using ArkLens.Models.Builders;
 
 namespace ArkLens.Models.Snapshots;
 
-public record CharacterSnapshot : ISnapshot<CharacterSnapshot, CharacterDraft>
+public record CharacterSnapshot : ISnapshot<CharacterBuilder>
 {
 	public string? Name { get; set; }
 	//public required string? Class { get; init; }
 	public string? Race { get; set; }
 	public string? Alignment { get; set; }
+	public string? Sex { get; set; }
 
-	public CharacterSnapshot FillFrom(CharacterDraft value)
-	{
-		Name = value.Name;
-		Race = value.Race.Name;
-		Alignment = value.Alignment.Name;
-		return this;
-	}
-
-	public CharacterDraft Build()
+	public CharacterBuilder CreateBuilder()
 		=> new()
 		{
 			Name = Name,
 			Race = Race,
 			Alignment = Alignment,
+			Sex = Sex,
 		};
 }

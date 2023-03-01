@@ -22,7 +22,7 @@ public record ThrowResult
 	public int Sum { get; }
 
 	// TODO: ADD BUFFS.
-	public ThrowResult(Die die, int modifyer, int count = 1)
+	public ThrowResult(Die die, int modifyer = 0, int count = 1)
 	{
 		Die = die;
 		Throws = Die.GetResults(count).ToArray();

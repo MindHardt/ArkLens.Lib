@@ -33,6 +33,4 @@ public partial class CharacterBuilderSvg : DynamicSvg<CharacterBuilder>
 		string sex = nameof(Value.Sex);
 		AddFillAction(sex, d => d.Sex.Value?.ToString());
 	}
-
-
 }

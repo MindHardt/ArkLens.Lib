@@ -77,6 +77,12 @@ public abstract partial class DynamicSvg<T>
 	}
 
 	/// <summary>
+	/// Fills <see cref="_actions"/> so that all meaningful triggers of <see cref="Value"/>'s
+	/// <see cref="INotifyPropertyChanged.PropertyChanged"/> are being projected.
+	/// </summary>
+	protected abstract void MapActions();
+
+	/// <summary>
 	/// Fills <see cref="_nodes"/> with all dummy values found in <see cref="Xml"/>.
 	/// By default dummy values are formatted like "${NAME}".
 	/// </summary>
@@ -118,12 +124,6 @@ public abstract partial class DynamicSvg<T>
 	}
 
 	/// <summary>
-	/// Fills <see cref="_actions"/> so that all meaningful triggers of <see cref="Value"/>'s
-	/// <see cref="INotifyPropertyChanged.PropertyChanged"/> are being projected.
-	/// </summary>
-	protected abstract void MapActions();
-
-	/// <summary>
 	/// Adds action bind so that when <see cref="Value"/> changes <paramref name="propName"/>
 	/// property, corresponding <see cref="Xml"/> node is updated.
 	/// </summary>
@@ -131,13 +131,13 @@ public abstract partial class DynamicSvg<T>
 	/// <param name="datasource"></param>
 	protected virtual void AddFillAction(string propName, Func<T, string?> datasource)
 	{
+		if (_nodes.GetValueOrDefault(propName.ToUpper()) is not List<XmlNode> list) 
+			return;
+
 		_actions[propName] = () =>
 		{
-			if (_nodes.TryGetValue(propName.ToUpper(), out var list))
-			{
-				foreach (var node in list)
-					node.InnerText = datasource(Value) ?? string.Empty;
-			}
+			foreach (var node in list)
+				node.InnerText = datasource(Value) ?? string.Empty;
 		};
 	}
 }
