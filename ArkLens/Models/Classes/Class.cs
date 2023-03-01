@@ -2,7 +2,7 @@
 
 namespace ArkLens.Models.Professions;
 
-public abstract class Class : CharacterElement, ICharacterElementEnumeration<Class>
+public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 {
 	protected Class(string emoji, string name) : base(emoji, name)
 	{

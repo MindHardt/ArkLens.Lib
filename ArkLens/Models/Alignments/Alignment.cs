@@ -2,7 +2,7 @@
 using System.Text;
 
 namespace ArkLens.Models.Alignments;
-public class Alignment : CharacterElement, ICharacterElementEnumeration<Alignment>
+public class Alignment : ArklensElement, IArklensElementEnumeration<Alignment>
 {
 	public VerticalAlignment Vertical { get; }
 	public HorizontalAlignment Horizontal { get; }

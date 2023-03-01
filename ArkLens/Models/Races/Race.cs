@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace ArkLens.Models.Races;
 
-public abstract class Race : CharacterElement, ICharacterElementEnumeration<Race>
+public abstract class Race : ArklensElement, IArklensElementEnumeration<Race>
 {
 	protected Race(string emoji, string name) : base(emoji, name)
 	{

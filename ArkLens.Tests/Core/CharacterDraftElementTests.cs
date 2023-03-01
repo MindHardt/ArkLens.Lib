@@ -1,4 +1,4 @@
-﻿using ArkLens.Core;
+﻿using ArkLens.Abstractions;
 using ArkLens.Models.Races;
 using ArkLens.Models.Races.Common;
 using System.Text.Json;
@@ -10,7 +10,7 @@ public class CharacterDraftElementTests
 	[Fact]
 	public void AdjustTests()
 	{
-		CharacterDraftElement<Race> draft = new();
+		ArklensBuilderElement<Race> draft = new();
 
 		Assert.Null(draft.Name);
 		Assert.Null(draft.Value);
@@ -20,7 +20,7 @@ public class CharacterDraftElementTests
 
 		Assert.Equal(draft.Value, race);
 
-		CharacterDraftElement<Race> other = new()
+		ArklensBuilderElement<Race> other = new()
 		{
 			Value = race
 		};
@@ -32,13 +32,13 @@ public class CharacterDraftElementTests
 	[Fact]
 	public void JsonTests()
 	{
-		CharacterDraftElement<Race> draft = new()
+		ArklensBuilderElement<Race> draft = new()
 		{
 			Value = Dwarf.Value,
 		};
 
 		string json = JsonSerializer.Serialize(draft);
-		var deserialized = JsonSerializer.Deserialize<CharacterDraftElement<Race>>(json);
+		var deserialized = JsonSerializer.Deserialize<ArklensBuilderElement<Race>>(json);
 
 		Assert.Equal(draft, deserialized);
 		// CharacterDraftElements are serialized by names so they must not contain emoji
@@ -50,7 +50,7 @@ public class CharacterDraftElementTests
 	{
 		Race race = Dwarf.Value;
 
-		CharacterDraftElement<Race> draft = race.Name;
+		ArklensBuilderElement<Race> draft = race.Name;
 
 		Assert.NotNull(draft);
 		Assert.Equal(race.Name, draft.Name);

@@ -6,7 +6,7 @@ namespace ArkLens.Models.Stats;
 /// <summary>
 /// A base class for all stats
 /// </summary>
-public abstract class Stat : CharacterElement
+public abstract class Stat : ArklensElement
 {
 	#region Raw
 	/// <summary>

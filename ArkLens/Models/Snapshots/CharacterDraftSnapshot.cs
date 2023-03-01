@@ -1,8 +1,8 @@
-﻿using ArkLens.Models.Drafts;
+﻿using ArkLens.Models.Builders;
 
 namespace ArkLens.Models.Snapshots;
 
-public record CharacterDraftSnapshot : ISnapshot<CharacterDraftSnapshot, CharacterDraft>
+public record CharacterDraftSnapshot : ISnapshot<CharacterDraftSnapshot, CharacterBuilder>
 {
 	public ulong? Id { get; init; }
 	public required string? Name { get; init; }
@@ -10,7 +10,7 @@ public record CharacterDraftSnapshot : ISnapshot<CharacterDraftSnapshot, Charact
 	public required string? Race { get; init; }
 	public required string? Alignment { get; init; }
 
-	public static CharacterDraftSnapshot CreateFrom(CharacterDraft value)
+	public static CharacterDraftSnapshot CreateFrom(CharacterBuilder value)
 		=> new()
 		{
 			Name = value.Name,
@@ -18,7 +18,7 @@ public record CharacterDraftSnapshot : ISnapshot<CharacterDraftSnapshot, Charact
 			Alignment = value.Alignment.Name,
 		};
 
-	public CharacterDraft Build()
+	public CharacterBuilder Build()
 		=> new()
 		{
 			Name = Name,

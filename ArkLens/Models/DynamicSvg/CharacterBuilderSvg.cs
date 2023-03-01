@@ -1,18 +1,18 @@
-﻿using ArkLens.Models.Drafts;
+﻿using ArkLens.Models.Builders;
 using ArkLens.Properties;
 using System.Text;
 
-namespace ArkLens.Models.SvgFiles;
+namespace ArkLens.Models.DynamicSvg;
 
-public partial class CharacterDraftSvg : DynamicSvg<CharacterDraft>
+public partial class CharacterBuilderSvg : DynamicSvg<CharacterBuilder>
 {
-	public CharacterDraftSvg(CharacterDraft value, string? svg = default)
+	public CharacterBuilderSvg(CharacterBuilder value, string? svg = default)
 		: base(value, svg ?? Encoding.UTF8.GetString(Resources.CharacterFront))
 	{
 	}
 
-	public static DynamicSvg<CharacterDraft> GetOrCreate(CharacterDraft draft)
-		=> GetOrCreate(draft, d => new CharacterDraftSvg(d));
+	public static DynamicSvg<CharacterBuilder> GetOrCreate(CharacterBuilder draft)
+		=> GetOrCreate(draft, d => new CharacterBuilderSvg(d));
 
 	protected override void MapActions()
 	{

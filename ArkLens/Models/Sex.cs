@@ -6,7 +6,7 @@ namespace ArkLens.Models;
 /// Represents the biological sex of the character. It does not influence anything and is only
 /// informative.
 /// </summary>
-public class Sex : CharacterElement, ICharacterElementEnumeration<Sex>
+public class Sex : ArklensElement, IArklensElementEnumeration<Sex>
 {
 	public Sex(string emoji, string name) : base(emoji, name)
 	{

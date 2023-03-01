@@ -2,24 +2,24 @@
 
 /// <summary>
 /// A base class for Arklens character elements with name and emoji parts.
-/// <see cref="CharacterElement"/>s are compared based on their <see cref="Emoji"/>
+/// <see cref="ArklensElement"/>s are compared based on their <see cref="Emoji"/>
 /// and <see cref="Name"/> properties.
 /// </summary>
-public abstract class CharacterElement : IEquatable<CharacterElement>
+public abstract class ArklensElement : IEquatable<ArklensElement>
 {
 	/// <summary>
-	/// The text emoji of this <see cref="CharacterElement"/>.
+	/// The text emoji of this <see cref="ArklensElement"/>.
 	/// This is expected to be Unicode emoji and not guaranteed to be unique.
 	/// </summary>
 	public string Emoji { get; }
 	/// <summary>
-	/// The text name of this <see cref="CharacterElement"/>.
+	/// The text name of this <see cref="ArklensElement"/>.
 	/// This is expected to be unique across 
-	/// different <see cref="CharacterElement"/> objects.
+	/// different <see cref="ArklensElement"/> objects.
 	/// </summary>
 	public string Name { get; }
 
-	public CharacterElement(string emoji, string name)
+	public ArklensElement(string emoji, string name)
 	{
 		Emoji = emoji;
 		Name = name;
@@ -27,7 +27,7 @@ public abstract class CharacterElement : IEquatable<CharacterElement>
 
 	public override bool Equals(object? obj)
 		=> ReferenceEquals(this, obj) ||
-		obj is CharacterElement other &&
+		obj is ArklensElement other &&
 		other.Emoji == Emoji &&
 		other.Name == Name;
 
@@ -36,7 +36,7 @@ public abstract class CharacterElement : IEquatable<CharacterElement>
 
 	/// <summary>
 	/// Returns a <see cref="string"/> that represents the current
-	/// <see cref="CharacterElement"/>, containing both 
+	/// <see cref="ArklensElement"/>, containing both 
 	/// <see cref="Emoji"/> and <see cref="Name"/>.
 	/// </summary>
 	/// <returns></returns>
@@ -44,20 +44,20 @@ public abstract class CharacterElement : IEquatable<CharacterElement>
 		=> $"{Emoji} {Name}";
 
 	/// <summary>
-	/// Indicates whether this <see cref="CharacterElement"/> is equal to
+	/// Indicates whether this <see cref="ArklensElement"/> is equal to
 	/// <paramref name="other"/>.
 	/// </summary>
 	/// <param name="other"></param>
 	/// <returns>
-	/// <see langword="true"/> if current <see cref="CharacterElement"/> is
+	/// <see langword="true"/> if current <see cref="ArklensElement"/> is
 	/// equal to <paramref name="other"/>; otherwise <see langword="false"/>.
 	/// </returns>
-	public bool Equals(CharacterElement? other)
+	public bool Equals(ArklensElement? other)
 		=> Equals(this, other);
 
-	public static bool operator ==(CharacterElement? left, CharacterElement? right)
+	public static bool operator ==(ArklensElement? left, ArklensElement? right)
 		=> Equals(left, right);
 
-	public static bool operator !=(CharacterElement? left, CharacterElement? right)
+	public static bool operator !=(ArklensElement? left, ArklensElement? right)
 		=> !Equals(left, right);
 }

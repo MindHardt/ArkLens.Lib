@@ -7,9 +7,9 @@ public class CharacterElementTests
 	[Fact]
 	public void EqualityTests()
 	{
-		CharacterElement one = new CharacterElementTest("1", "one");
-		CharacterElement alsoOne = new CharacterElementTest("1", "one");
-		CharacterElement two = new CharacterElementTest("2", "two");
+		ArklensElement one = new CharacterElementTest("1", "one");
+		ArklensElement alsoOne = new CharacterElementTest("1", "one");
+		ArklensElement two = new CharacterElementTest("2", "two");
 
 		Assert.True(one == alsoOne);
 		Assert.True(one.GetHashCode() == alsoOne.GetHashCode());
@@ -17,7 +17,7 @@ public class CharacterElementTests
 		Assert.False(one == null);
 	}
 
-	private class CharacterElementTest : CharacterElement
+	private class CharacterElementTest : ArklensElement
 	{
 		internal CharacterElementTest(string emoji, string name) : base(emoji, name)
 		{
