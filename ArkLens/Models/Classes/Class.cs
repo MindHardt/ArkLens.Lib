@@ -1,6 +1,8 @@
 ﻿using ArkLens.Core;
+using ArkLens.Models.Alignments;
+using ArkLens.Models.Stats;
 
-namespace ArkLens.Models.Professions;
+namespace ArkLens.Models.Classes;
 
 public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 {
@@ -8,7 +10,7 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	{
 	}
 
-	public static IReadOnlyList<Class> PossibleValues => null;
+	public static IReadOnlyList<Class> All => null;
 
 	/// <summary>
 	/// The amount of Health gained per-level for this <see cref="Class"/>.
@@ -18,4 +20,12 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	/// The amount of skill points gained per-level for this <see cref="Class"/>.
 	/// </summary>
 	public abstract int SkillPoints { get; }
+	/// <summary>
+	/// The stats priority of this <see cref="Class"/>.
+	/// </summary>
+	public abstract StatsPrority StatsPrority { get; }
+	/// <summary>
+	/// Contains <see cref="Alignment"/>s that this <see cref="Class"/> can take.
+	/// </summary>
+	public virtual IReadOnlySet<Alignment>? AllowedAlignments { get; } = null;
 }

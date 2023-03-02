@@ -8,7 +8,7 @@ public class Human : Race, ISingleton<Human>
 	{
 	}
 
-	public static Human Value { get; } = new();
+	public static Human Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence => null;
 }

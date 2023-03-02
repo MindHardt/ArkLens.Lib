@@ -8,7 +8,7 @@ public class Dwarf : Race, ISingleton<Dwarf>
 	{
 	}
 
-	public static Dwarf Value { get; } = new();
+	public static Dwarf Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence { get; } = new(
 		Con: Stats.RaceImpact.Amplified,

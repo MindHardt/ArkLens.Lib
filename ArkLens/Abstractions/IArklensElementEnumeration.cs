@@ -20,6 +20,6 @@ public interface IArklensElementEnumeration<TSelf> : IEnumeration<TSelf>
 	/// </param>
 	/// <returns></returns>
 	static TSelf? GetByName(string? name, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
-		=> TSelf.PossibleValues
+		=> TSelf.All
 		.FirstOrDefault(e => e.Name.Equals(name, comparison));
 }

@@ -8,7 +8,7 @@ public interface ISingleton<TSelf>
 	where TSelf : ISingleton<TSelf>
 {
 	/// <summary>
-	/// The only possible value of <typeparamref name="TSelf"/>.
+	/// The static value of <typeparamref name="TSelf"/>.
 	/// </summary>
-	static abstract TSelf Value { get; }
+	public static abstract TSelf Static { get; }
 }

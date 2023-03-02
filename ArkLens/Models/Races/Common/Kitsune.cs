@@ -8,7 +8,7 @@ public class Kitsune : Race, ISingleton<Kitsune>
 	{
 	}
 
-	public static Kitsune Value { get; } = new();
+	public static Kitsune Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence { get; } = new(
 		Dex: Stats.RaceImpact.Amplified,

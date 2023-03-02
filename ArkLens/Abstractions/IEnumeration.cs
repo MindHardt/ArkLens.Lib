@@ -11,5 +11,5 @@ public interface IEnumeration<TSelf>
 	/// <summary>
 	/// Represents all possible values of <typeparamref name="TSelf"/>.
 	/// </summary>
-	static abstract IReadOnlyList<TSelf> PossibleValues { get; }
+	static abstract IReadOnlyList<TSelf> All { get; }
 }
