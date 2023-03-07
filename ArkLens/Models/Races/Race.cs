@@ -13,7 +13,7 @@ public abstract class Race : ArklensElement, IArklensElementEnumeration<Race>
 	/// <summary>
 	/// Contains all possible <see cref="Race"/>s
 	/// </summary>
-	public static IReadOnlyList<Race> PossibleValues { get; } = GetAllRaces();
+	public static IReadOnlyList<Race> All { get; } = GetAllRaces();
 
 
 	/// <summary>
@@ -26,7 +26,7 @@ public abstract class Race : ArklensElement, IArklensElementEnumeration<Race>
 		=> Assembly.GetExecutingAssembly()
 			.GetTypes()
 			.Where(t => t.IsAssignableTo(typeof(Race)) && !t.IsAbstract)
-			.Select(t => t.GetProperty(nameof(ISingleton<Human>.Value))!)
+			.Select(t => t.GetProperty(nameof(ISingleton<Human>.Static))!)
 			.Select(p => (Race)p.GetValue(null)!)
 			.ToArray();
 }

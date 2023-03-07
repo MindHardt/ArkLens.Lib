@@ -6,8 +6,17 @@
 /// with initial values.
 /// </summary>
 /// <typeparam name="TBuilder"></typeparam>
-public interface ISnapshot<TBuilder>
+/// <typeparam name="TSelf">The implementing type.</typeparam>
+public interface ISnapshot<TBuilder, TSelf>
+	where TSelf : ISnapshot<TBuilder, TSelf>
 {
+	/// <summary>
+	/// Creates a <typeparamref name="TSelf"/> with the data
+	/// of <paramref name="builder"/>.
+	/// </summary>
+	/// <param name="builder"></param>
+	/// <returns></returns>
+	public static abstract TSelf FromBuilder(TBuilder builder);
 	/// <summary>
 	/// Generates a <typeparamref name="TBuilder"/> from this
 	/// <see cref="ISnapshot{TBuilder}"/>s data.

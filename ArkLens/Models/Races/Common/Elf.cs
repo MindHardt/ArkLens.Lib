@@ -8,7 +8,7 @@ public class Elf : Race, ISingleton<Elf>
 	{
 	}
 
-	public static Elf Value { get; } = new();
+	public static Elf Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence { get; } = new(
 		Dex: Stats.RaceImpact.Amplified,

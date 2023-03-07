@@ -21,5 +21,5 @@ public class Sex : ArklensElement, IArklensElementEnumeration<Sex>
 	/// </summary>
 	public static Sex Female { get; } = new("♀", "Женщина");
 
-	public static IReadOnlyList<Sex> PossibleValues => new[] { Male, Female } ;
+	public static IReadOnlyList<Sex> All => new[] { Male, Female } ;
 }

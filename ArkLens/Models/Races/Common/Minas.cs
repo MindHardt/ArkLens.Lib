@@ -8,7 +8,7 @@ public class Minas : Race, ISingleton<Minas>
 	{
 	}
 
-	public static Minas Value { get; } = new();
+	public static Minas Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence { get; } = new(
 		Str: Stats.RaceImpact.Amplified,

@@ -8,7 +8,7 @@ public class Serpent : Race, ISingleton<Serpent>
 	{
 	}
 
-	public static Serpent Value { get; } = new();
+	public static Serpent Static { get; } = new();
 
 	public override RaceStatInfluence? StatInfluence { get; } = new(
 		Con: Stats.RaceImpact.Amplified,

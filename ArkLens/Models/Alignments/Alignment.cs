@@ -79,7 +79,7 @@ public class Alignment : ArklensElement, IArklensElementEnumeration<Alignment>
 	public static Alignment NeutralEvil { get; } = new(HorizontalAlignment.Neutral, VerticalAlignment.Evil);
 	public static Alignment ChaoticEvil { get; } = new(HorizontalAlignment.Chaotic, VerticalAlignment.Evil);
 
-	public static IReadOnlyList<Alignment> PossibleValues { get; } = new[] 
+	public static IReadOnlyList<Alignment> All { get; } = new[] 
 	{ 
 		LawfulGood, NeutralGood, ChaoticGood, 
 		LawfulNeutral, Neutral, ChaoticNeutral, 

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace ArkLens.Models.Builders;
 
-public class CharacterBuilder : INotifyPropertyChanged, IBuilder<Character>
+public record CharacterBuilder : INotifyPropertyChanged, IBuilder<Character, CharacterBuilder>
 {
 	private string? name;
 
@@ -47,6 +47,15 @@ public class CharacterBuilder : INotifyPropertyChanged, IBuilder<Character>
 		Alignment.HasValue() &&
 		Race.HasValue() &&
 		Sex.HasValue();
+
+	public static CharacterBuilder FromModel(Character model)
+		=> new()
+		{
+			Name = model.Name,
+			Alignment = model.Alignment,
+			Race = model.Race,
+			Sex = model.Sex,
+		};
 
 	public CharacterBuilder()
 	{

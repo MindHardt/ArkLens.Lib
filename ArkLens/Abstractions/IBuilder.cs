@@ -6,8 +6,18 @@
 /// to create <typeparamref name="TModel"/> objects.
 /// </summary>
 /// <typeparam name="TModel"></typeparam>
-public interface IBuilder<TModel>
+/// <typeparam name="TSelf">The implementing type.</typeparam>
+public interface IBuilder<TModel, TSelf>
+	where TSelf : IBuilder<TModel, TSelf>
 {
+	/// <summary>
+	/// Creates a <typeparamref name="TSelf"/> object with data of
+	/// <paramref name="model"/>.
+	/// </summary>
+	/// <param name="model"></param>
+	/// <returns></returns>
+	public abstract static TSelf FromModel(TModel model);
+
 	/// <summary>
 	/// Creates a model from this <see cref="IBuilder{TModel}"/>.
 	/// This method can throw <see cref="Exception"/>s, it is recommended to
