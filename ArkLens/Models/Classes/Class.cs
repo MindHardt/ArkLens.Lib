@@ -1,4 +1,5 @@
 ﻿using ArkLens.Core;
+using ArkLens.Models.Stats;
 using ArkLens.Models.Subclasses;
 
 namespace ArkLens.Models.Classes;
@@ -9,7 +10,7 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	{
 	}
 
-	public static IReadOnlyList<Class> PossibleValues => null;
+	public static IReadOnlyList<Class> All => null;
 
 	/// <summary>
 	/// The amount of Health gained per-level for this <see cref="Class"/>.
@@ -19,6 +20,10 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	/// The amount of skill points gained per-level for this <see cref="Class"/>.
 	/// </summary>
 	public abstract int SkillPoints { get; }
+	/// <summary>
+	/// Contains <see cref="Stats.StatsPrority"/> object for this <see cref="Class"/>
+	/// </summary>
+	public abstract StatsPrority StatsPrority { get; }
 	/// <summary>
 	/// A collection of <see cref="Subclass"/> objects suitable for this <see cref="Class"/>.
 	/// Contains <see langword="null"/> if this <see cref="Class"/> does not expect any
