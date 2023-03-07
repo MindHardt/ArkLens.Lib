@@ -72,7 +72,7 @@ public class ArklensBuilderElement<TElement> : INotifyPropertyChanged
 
     public static implicit operator ArklensBuilderElement<TElement>(string? name)
         => FromName(name);
-	public static implicit operator ArklensBuilderElement<TElement>(TElement value)
+	public static implicit operator ArklensBuilderElement<TElement>(TElement? value)
 		=> FromValue(value);
 
 	/// <summary>
