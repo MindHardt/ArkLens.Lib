@@ -1,4 +1,5 @@
 ﻿using ArkLens.Core;
+using ArkLens.Models.Alignments;
 using ArkLens.Models.Stats;
 using ArkLens.Models.Subclasses;
 
@@ -24,6 +25,11 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	/// Contains <see cref="Stats.StatsPrority"/> object for this <see cref="Class"/>
 	/// </summary>
 	public abstract StatsPrority StatsPrority { get; }
+	/// <summary>
+	/// If this <see cref="Class"/> restricts <see cref="Alignment"/> of its owner,
+	/// this property holds all possible values of <see cref="Alignment"/>.
+	/// </summary>
+	public virtual IReadOnlySet<Alignment>? AllowedAlignments => null;
 	/// <summary>
 	/// A collection of <see cref="Subclass"/> objects suitable for this <see cref="Class"/>.
 	/// Contains <see langword="null"/> if this <see cref="Class"/> does not expect any
