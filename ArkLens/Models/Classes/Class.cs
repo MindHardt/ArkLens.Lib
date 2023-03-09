@@ -1,4 +1,5 @@
 ﻿using ArkLens.Core;
+using ArkLens.Extensions;
 using ArkLens.Models.Alignments;
 using ArkLens.Models.Stats;
 using ArkLens.Models.Subclasses;
@@ -11,7 +12,9 @@ public abstract class Class : ArklensElement, IArklensElementEnumeration<Class>
 	{
 	}
 
-	public static IReadOnlyList<Class> All => null;
+	public static IReadOnlyList<Class> All => SingletonHelper.AllSingletons
+		.OfType<Class>()
+		.ToList();
 
 	/// <summary>
 	/// The amount of Health gained per-level for this <see cref="Class"/>.
